@@ -1,0 +1,91 @@
+10
+
+dir
+0
+https://www.cma-livingstones.org/churchsys-yii/protected/modules/rights
+https://www.cma-livingstones.org/churchsys-yii
+add
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ec8541db-0cc5-4d65-8978-da083a9659e6
+
+license.txt
+file
+
+
+
+add
+
+assets
+dir
+
+
+
+add
+
+models
+dir
+
+
+
+add
+
+components
+dir
+
+
+
+add
+
+controllers
+dir
+
+
+
+add
+
+messages
+dir
+
+
+
+add
+
+data
+dir
+
+
+
+add
+
+RightsModule.php
+file
+
+
+
+add
+
+views
+dir
+
+
+
+add
+

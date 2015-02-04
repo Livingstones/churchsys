@@ -1,0 +1,38 @@
+<div id="take_attendance_form" class="form">
+	<fieldset>
+
+		<legend>請輸入 會友編號/姓名</legend>
+<?php $form=$this->beginWidget('CActiveForm', array(
+	'id'=>'worship-attendance-take-form',
+	'enableAjaxValidation'=>false,
+)); ?>
+	<div class="row">
+		<?php echo $form->labelEx($model,'member_code'); ?>
+		<?php $this->widget('CAutoComplete',
+          array(
+             'name'=>'WorshipAttendanceTakeForm[member_code]', 
+             'url'=>array('member/autoComplete'), 
+             'max'=>10,
+             'minChars'=>1, 
+             'delay'=>500,
+             'matchCase'=>false,
+             'htmlOptions'=>array('size'=>'40'), 
+             'methodChain'=>".result(function(event,item){\$(\"#WorshipAttendanceTakeForm_member_code\").val(item[1]);})",
+             )); ?>
+		<?php echo $form->error($model,'member_code'); ?>
+	</div>
+
+	<div class="row buttons">
+		<?php echo $form->hiddenField($model,'worship_id', array("value"=>$worship_id));?>
+		<?php echo CHtml::ajaxSubmitButton(
+			'送出',
+			array('worshipAttendance/ajaxTake'),
+			array(
+				'update' => '#welcome_message',
+			)
+		); ?>
+		<input type="button" id="btn_to_new_friend" style="float:right;" value="新朋友簽到-->" />
+	</div>
+<?php $this->endWidget(); ?>
+	</fieldset>
+</div>

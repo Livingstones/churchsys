@@ -1,0 +1,79 @@
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<style>
+.shttitle td {
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.pcode {
+	font-size: 10px;
+}
+
+.tbltitle td {
+	border: 2px solid #000;
+	font-weight: bold;
+	font-size: 12px;
+}
+
+.tblcontent td {
+	border: 1px solid #000;
+	font-weight: none;
+	font-size: 12px;
+}
+</style>
+<table border=1 cellpadding=0 cellspacing=0 id='tblMain'>
+	<tr class="shttitle">
+		<td colspan="9">
+			<?php $target = strtotime($year . "-01-01") + (60*60*24*7*($week-1)); ?>
+			臨時會友崇拜出席紀錄 (<?php echo date("Y-m-d", $target-(60*60*24*(date("N", $target)-1))); ?> - <?php echo date("Y-m-d", $target+(60*60*24*(7-date("N", $target)))); ?>)
+		</td>
+		<td align="right" class="pcode">R1002</td>
+	</tr>
+	<tr class="tbltitle">
+		<td>
+			崇拜</td>
+		<td>
+			會友編號</td>
+		<td>
+			簽到次數</td>
+		<td>
+			姓名</td>
+		<td>*</td>
+<?php foreach ($worship_list as $worship) : ?>
+		<td>
+			<?php echo $worship['name']; ?></td>
+<?php endforeach; ?>
+	</tr>
+<?php if (count($data) > 0) : ?>
+<?php foreach ($data as $member) : ?>
+<?php 
+	$bgcolor = "none";
+	if ($member["is_new"]) $bgcolor= "green"; 
+	elseif ($member["has_new_card"]) $bgcolor= "red"; 
+	elseif ($member["need_form"]) $bgcolor= "yellow"; 
+?>
+	<tr class="tblcontent">
+		<td>
+			<?php echo $member["worship"]; ?></td>
+		<td>
+			<?php echo $member["member_code"]; ?></td>
+		<td>
+			<?php echo $member["sign_in_counts"]; ?></td>
+		<td>
+			<?php echo $member["name"]; ?></td>
+		<td style='background-color:<?php echo $bgcolor; ?>;'>
+			<?php 
+				if ($member["is_new"]) echo "N"; 
+				elseif ($member["has_new_card"]) echo "C";
+				elseif ($member["need_form"]) echo "F"; 
+				else echo "&nbsp;";
+			?>
+		</td>
+<?php foreach ($worship_list as $worship) : ?>
+		<td<?php if ($member["has_new_card"] || $member["need_form"]) echo " style='background-color:" . $bgcolor . ";'"; ?>>&nbsp;</td>
+<?php endforeach; ?>
+	</tr>
+<?php endforeach; ?>
+<?php endif; ?>
+</table>

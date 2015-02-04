@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/churchsys-yii/!svn/ver/18/protected/views/member
+END
+_search.php
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/churchsys-yii/!svn/ver/15/protected/views/member/_search.php
+END
+merge.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/churchsys-yii/!svn/ver/21/protected/views/member/merge.php
+END
+update.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/churchsys-yii/!svn/ver/2/protected/views/member/update.php
+END
+duplicate.php
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/churchsys-yii/!svn/ver/21/protected/views/member/duplicate.php
+END
+create.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/churchsys-yii/!svn/ver/2/protected/views/member/create.php
+END
+admin.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/churchsys-yii/!svn/ver/15/protected/views/member/admin.php
+END
+index.php
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/churchsys-yii/!svn/ver/2/protected/views/member/index.php
+END
+_form.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/churchsys-yii/!svn/ver/21/protected/views/member/_form.php
+END
+_view.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/churchsys-yii/!svn/ver/21/protected/views/member/_view.php
+END
+view.php
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/churchsys-yii/!svn/ver/21/protected/views/member/view.php
+END

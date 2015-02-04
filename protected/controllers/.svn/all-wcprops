@@ -1,0 +1,113 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/churchsys-yii/!svn/ver/19/protected/controllers
+END
+IssuesController.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/churchsys-yii/!svn/ver/24/protected/controllers/IssuesController.php
+END
+MemberController.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/churchsys-yii/!svn/ver/24/protected/controllers/MemberController.php
+END
+CourseController.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/churchsys-yii/!svn/ver/24/protected/controllers/CourseController.php
+END
+ImageController.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/churchsys-yii/!svn/ver/2/protected/controllers/ImageController.php
+END
+FileController.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/churchsys-yii/!svn/ver/11/protected/controllers/FileController.php
+END
+WorshipRemarksController.php
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/churchsys-yii/!svn/ver/24/protected/controllers/WorshipRemarksController.php
+END
+GroupController.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/churchsys-yii/!svn/ver/24/protected/controllers/GroupController.php
+END
+WorshipAttendanceController.php
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/churchsys-yii/!svn/ver/2/protected/controllers/WorshipAttendanceController.php
+END
+GroupPeriodController.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/churchsys-yii/!svn/ver/24/protected/controllers/GroupPeriodController.php
+END
+CourseAttendanceController.php
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/churchsys-yii/!svn/ver/2/protected/controllers/CourseAttendanceController.php
+END
+SiteController.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/churchsys-yii/!svn/ver/24/protected/controllers/SiteController.php
+END
+GroupAttendanceController.php
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/churchsys-yii/!svn/ver/22/protected/controllers/GroupAttendanceController.php
+END
+WorshipReportController.php
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/churchsys-yii/!svn/ver/31/protected/controllers/WorshipReportController.php
+END
+UserController.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/churchsys-yii/!svn/ver/24/protected/controllers/UserController.php
+END
+WorshipGreetingController.php
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/churchsys-yii/!svn/ver/24/protected/controllers/WorshipGreetingController.php
+END
+HymnController.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/churchsys-yii/!svn/ver/24/protected/controllers/HymnController.php
+END
+WorshipController.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/churchsys-yii/!svn/ver/24/protected/controllers/WorshipController.php
+END
+PledgeController.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/churchsys-yii/!svn/ver/24/protected/controllers/PledgeController.php
+END

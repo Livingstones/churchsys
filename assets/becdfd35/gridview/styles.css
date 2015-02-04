@@ -1,0 +1,161 @@
+.grid-view-loading
+{
+	background:url(loading.gif) no-repeat;
+}
+
+
+/** Table styles **/
+
+.grid-view table.items {
+	width: 100%;
+	border-spacing: 1px;
+	background-color: #e7e7e7;
+	color: #666;
+}
+
+.grid-view table.items td,
+.grid-view table.items th { padding: 4px; }
+
+.grid-view table.items thead th {
+	text-align: center;
+	background: #f0f0f0;
+	color: #666;
+	border-bottom: 1px solid #999;
+	border-left: 1px solid #fff;
+}
+
+.grid-view table.items thead a:hover { text-decoration: none; }
+
+.grid-view table.items thead th img { vertical-align: middle; }
+
+.grid-view table.items tbody th { font-weight: bold; }
+
+.grid-view table.items tbody tr			{ background-color: #fff;  text-align: left; }
+.grid-view table.items tbody tr.even 	{ background: #f9f9f9; border-top: 1px solid #fff; }
+
+.grid-view table.items tbody tr.odd:hover td,
+.grid-view table.items tbody tr.even:hover td  { background-color: #ffd ; }
+
+.grid-view table.items tbody tr td 	   { height: 25px; background: #fff; border: 1px solid #fff; }
+.grid-view table.items tbody tr.even td { background: #f9f9f9; border-top: 1px solid #FFF; }
+
+.grid-view table.items tfoot tr { text-align: center;  color: #333; }
+.grid-view table.items tfoot td,
+.grid-view table.items tfoot th { background-color: #f3f3f3; border-top: 1px solid #999; text-align: center; }
+
+.grid-view table.items td.order 		{ text-align: center; white-space: nowrap; }
+.grid-view table.items td.order span { float: left; display: block; width: 20px; text-align: center; }
+
+.grid-view table.items .pagination { display:table; padding:0;  margin:0 auto;	 }
+
+/*
+.grid-view table.items
+{
+	background: white;
+	border-collapse: collapse;
+	width: 100%;
+	border: 1px #D0E3EF solid;
+}
+
+.grid-view table.items th, .grid-view table.items td
+{
+	font-size: 0.9em;
+	border: 1px white solid;
+	padding: 0.3em;
+}
+
+.grid-view table.items th
+{
+	color: white;
+	background: url("bg.gif") repeat-x scroll left top white;
+	text-align: center;
+}
+
+.grid-view table.items th a
+{
+	color: #EEE;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+.grid-view table.items th a:hover
+{
+	color: #FFF;
+}
+
+.grid-view table.items th a.asc
+{
+	background:url("up.gif") right center no-repeat;
+	padding-right: 10px;
+}
+
+.grid-view table.items th a.desc
+{
+	background:url("down.gif") right center no-repeat;
+	padding-right: 10px;
+}
+
+.grid-view table.items tr.even
+{
+	background: #F8F8F8;
+}
+
+.grid-view table.items tr.odd
+{
+	background: #E5F1F4;
+}
+
+.grid-view table.items tr.selected
+{
+	background: #BCE774;
+}
+
+.grid-view table.items tr:hover
+{
+	background: #ECFBD4;
+}
+*/
+.grid-view .link-column img
+{
+	border: 0;
+}
+
+.grid-view .button-column
+{
+	text-align: center;
+	width: 60px;
+}
+
+.grid-view .button-column img
+{
+	border: 0;
+}
+
+.grid-view .checkbox-column
+{
+	width: 15px;
+}
+
+.grid-view .summary
+{
+	margin: 0 0 5px 0;
+	text-align: right;
+}
+
+.grid-view .pager
+{
+	margin: 5px 0 0 0;
+	text-align: right;
+}
+
+.grid-view .empty
+{
+	font-style: italic;
+}
+
+.grid-view .filters input,
+.grid-view .filters select
+{
+	width: 100%;
+	border: 1px solid #ccc;
+}
