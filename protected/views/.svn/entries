@@ -1,92 +1,0 @@
-10
-
-dir
-20
-https://www.cma-livingstones.org/churchsys-yii/protected/views
-https://www.cma-livingstones.org/churchsys-yii
-
-
-
-2011-05-26T11:31:29.590873Z
-18
-kalun
-
-
-svn:special svn:externals svn:needs-lock
-
-
-
-
-
-
-
-
-
-
-
-ec8541db-0cc5-4d65-8978-da083a9659e6
-
-
-
-
-
-
-0
-
-course
-dir
-
-courseAttendance
-dir
-
-file
-dir
-
-group
-dir
-
-groupAttendance
-dir
-
-groupPeriod
-dir
-
-hymn
-dir
-
-image
-dir
-
-issues
-dir
-
-layouts
-dir
-
-member
-dir
-
-pledge
-dir
-
-site
-dir
-
-user
-dir
-
-worship
-dir
-
-worshipAttendance
-dir
-
-worshipGreeting
-dir
-
-worshipRemarks
-dir
-
-worshipReport
-dir
-

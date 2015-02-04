@@ -1,70 +1,0 @@
-10
-
-dir
-0
-https://www.cma-livingstones.org/churchsys-yii/protected/modules/rights/views
-https://www.cma-livingstones.org/churchsys-yii
-add
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-ec8541db-0cc5-4d65-8978-da083a9659e6
-
-authItem
-dir
-
-
-
-add
-
-layouts
-dir
-
-
-
-add
-
-_flash.php
-file
-
-
-
-add
-
-install
-dir
-
-
-
-add
-
-assignment
-dir
-
-
-
-add
-
-_menu.php
-file
-
-
-
-add
-

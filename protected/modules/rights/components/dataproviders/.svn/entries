@@ -1,63 +1,0 @@
-10
-
-dir
-0
-https://www.cma-livingstones.org/churchsys-yii/protected/modules/rights/components/dataproviders
-https://www.cma-livingstones.org/churchsys-yii
-add
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-ec8541db-0cc5-4d65-8978-da083a9659e6
-
-RAuthItemChildDataProvider.php
-file
-
-
-
-add
-
-RAssignmentDataProvider.php
-file
-
-
-
-add
-
-RPermissionDataProvider.php
-file
-
-
-
-add
-
-RAuthItemParentDataProvider.php
-file
-
-
-
-add
-
-RAuthItemDataProvider.php
-file
-
-
-
-add
-
