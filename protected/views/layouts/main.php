@@ -57,9 +57,9 @@
 			        array('label'=>'課程', 'url'=>array('/course/admin'), 'visible'=>Yii::app()->user->checkAccess('manageCourse'), 'items'=>array(
 			            array('label'=>'課程資料', 'url'=>array('/course/admin'), 'visible'=>Yii::app()->user->checkAccess('manageCourse')),
 			        )),
-//			        array('label'=>'詩歌庫', 'url'=>array('/hymn/admin'), 'visible'=>Yii::app()->user->checkAccess('managen')Hym || Yii::app()->user->checkAccess('manageHymn'), 'items'=>array(
-//			            array('label'=>'詩歌資料', 'url'=>array('/hymn/admin'), 'visible'=>Yii::app()->user->checkAccess('manageHymn')),
-//			        )),
+			        array('label'=>'詩歌庫', 'url'=>array('/hymn/admin'), 'visible'=>Yii::app()->user->checkAccess('manageHymn') || Yii::app()->user->checkAccess('operateHymn'), 'items'=>array(
+			            array('label'=>'詩歌資料', 'url'=>array('/hymn/admin'), 'visible'=>Yii::app()->user->checkAccess('manageHymn') || Yii::app()->user->checkAccess('operateHymn')),
+			        )),
 			        array('label'=>'問題回報', 'url'=>array('/issues/index'), 'visible'=>!Yii::app()->user->isGuest),
 			    	array('label'=>'更新帳戶', 'url'=>array('/user/updateAccount'), 'visible'=>!Yii::app()->user->isGuest),
 					array('label'=>'權限設定', 'url'=>array('/rights'), 'visible'=>Yii::app()->user->checkAccess(Rights::module()->superuserName)),

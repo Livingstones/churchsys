@@ -4,12 +4,19 @@ $this->breadcrumbs=array(
 	$model->name,
 );
 
-$this->menu=array(
-	array('label'=>'詩歌列表', 'url'=>array('index')),
-	array('label'=>'新增詩歌', 'url'=>array('create')),
-	array('label'=>'更改詩歌', 'url'=>array('update', 'id'=>$model->id)),
-	array('label'=>'刪除詩歌', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
-);
+
+if (Yii::app()->user->checkAccess('manageHymn')) {
+    $this->menu=array(
+        array('label'=>'詩歌列表', 'url'=>array('index')),
+        array('label'=>'新增詩歌', 'url'=>array('create')),
+        array('label'=>'更改詩歌', 'url'=>array('update', 'id'=>$model->id)),
+        array('label'=>'刪除詩歌', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id),'confirm'=>'Are you sure you want to delete this item?')),
+    );
+} else {
+    $this->menu = array(
+        array('label'=>'詩歌列表', 'url'=>array('index'))
+    );
+}
 ?>
 
 <h1>詩歌資料 #<?php echo $model->name; ?></h1>

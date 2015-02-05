@@ -4,9 +4,13 @@ $this->breadcrumbs=array(
 	'管理',
 );
 
-$this->menu=array(
-	array('label'=>'新增詩歌', 'url'=>array('create')),
-);
+if (Yii::app()->user->checkAccess('manageHymn')) {
+    $this->menu=array(
+        array('label'=>'新增詩歌', 'url'=>array('create')),
+    );
+} else {
+    $this->menu = array();
+}
 
 Yii::app()->clientScript->registerScript('search', "
 $('.search-button').click(function(){
