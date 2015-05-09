@@ -130,10 +130,20 @@ class WorshipAttendanceTakeForm extends CFormModel
 		$criteria = new CDbCriteria;
 		$criteria->compare('member.account_type','=' . MEMBER::ACCOUNT_TYPE_NEW_MEMBER);
 		$criteria->compare('member_id',$modelMember->id);
-		if (WorshipAttendance::model()->lastTwoMonth()->with('member')->count($criteria) >= 6)
-		{
+        $worship_count = WorshipAttendance::model()->lastTwoMonth()->with('member')->count($criteria);
+		if ($worship_count >= 6) {
 			$message .= "<br/>您在過去兩個月內已有6次或以上簽到，邀請您填交會友資料表格。";
-		}
+		} elseif ($worship_count === 5) {
+            $message .= "<br/>您在過去兩個月內已有5次，願主祝福你。";
+        } elseif ($worship_count === 4) {
+            $message .= "<br/>您在過去兩個月內已有4次，願主祝福你。";
+        } elseif ($worship_count === 3) {
+            $message .= "<br/>您在過去兩個月內已有3次，願主祝福你。";
+        } elseif ($worship_count === 2) {
+            $message .= "<br/>您在過去兩個月內已有2次，願主祝福你。";
+        } elseif ($worship_count === 1) {
+            $message .= "<br/>這是你第一次來到活石家（兩個月內第一次回來的新朋友），願主祝福你。";
+        }
 		
 		if ($modelMember->new_card == MEMBER::NEW_CARD_WAITING_CARD) {
 			$message .= "<br/>您的\"個人名牌\"己備妥，請領取。";
