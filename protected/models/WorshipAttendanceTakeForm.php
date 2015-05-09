@@ -130,7 +130,8 @@ class WorshipAttendanceTakeForm extends CFormModel
 		$criteria = new CDbCriteria;
 		$criteria->compare('member.account_type','=' . MEMBER::ACCOUNT_TYPE_NEW_MEMBER);
 		$criteria->compare('member_id',$modelMember->id);
-        $worship_count = WorshipAttendance::model()->lastTwoMonth()->with('member')->count($criteria);
+        $worship_count = (int) WorshipAttendance::model()->lastTwoMonth()->with('member')->count($criteria);
+        echo $worship_count;
 		if ($worship_count >= 6) {
 			$message .= "<br/>您在過去兩個月內已有6次或以上簽到，邀請您填交會友資料表格。";
 		} elseif ($worship_count === 5) {
