@@ -131,19 +131,19 @@ class WorshipAttendanceTakeForm extends CFormModel
 		$criteria->compare('member.account_type','=' . MEMBER::ACCOUNT_TYPE_NEW_MEMBER);
 		$criteria->compare('member_id',$modelMember->id);
         $worship_count = (int) WorshipAttendance::model()->lastTwoMonth()->with('member')->count($criteria);
-        echo $worship_count;
+        // show
 		if ($worship_count >= 6) {
-			$message .= "<br/>您在過去兩個月內已有6次或以上簽到，邀請您填交會友資料表格。";
+			$message = "<span style='color: purple'>" . $modelMember->name . "弟兄/姊妹，歡迎你第" . $worship_count . "次參與活石家崇拜，邀請您填交會友資料表格，成為會友。</span>";
 		} elseif ($worship_count === 5) {
-            $message .= "<br/>您在過去兩個月內已有5次，願主祝福你。";
+            $message = "<span style='color: purple'>" . $modelMember->name . "弟兄/姊妹，歡迎你第5次參與活石家崇拜。</span>";
         } elseif ($worship_count === 4) {
-            $message .= "<br/>您在過去兩個月內已有4次，願主祝福你。";
+            $message = "<span style='color: purple'>" . $modelMember->name . "弟兄/姊妹，歡迎你第4次參與活石家崇拜。</span>";
         } elseif ($worship_count === 3) {
-            $message .= "<br/>您在過去兩個月內已有3次，願主祝福你。";
+            $message = "<span style='color: purple'>" . $modelMember->name . "弟兄/姊妹，歡迎你第3次參與活石家崇拜。</span>";
         } elseif ($worship_count === 2) {
-            $message .= "<br/>您在過去兩個月內已有2次，願主祝福你。";
+            $message = "<span style='color: purple'>" . $modelMember->name . "弟兄/姊妹，歡迎你第2次參與活石家崇拜。</span>";
         } elseif ($worship_count === 1) {
-            $message .= "<br/>這是你第一次來到活石家（兩個月內第一次回來的新朋友），願主祝福你。";
+            $message = "<span style='color: yellow'>" . $modelMember->name . "弟兄/姊妹，歡迎你第1次參與活石家崇拜。</span>";
         }
 		
 		if ($modelMember->new_card == MEMBER::NEW_CARD_WAITING_CARD) {
