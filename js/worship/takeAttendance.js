@@ -59,7 +59,7 @@ function onTakeSuccess(member_id, member_name, member_code, attend_time){
 	
 	// insert attend list
 	$('#attend-worship-grid .key').prepend('<span>' + worship_id + '-' + member_id + '</span>');
-	$('#attend-worship-grid .items tbody').prepend('<tr class="' + c + '"><td>' + member_name + ' (' + member_code + ')</td><td>' + attend_time + '</td><td class="button-column"><a class="delete" title="Delete" href="/churchsys2/index.php?r=WorshipAttendance/deleteByWorshipMember&amp;worship_member=' + worship_id + '-' + member_id + '"><img src="/churchsys2/assets/becdfd35/gridview/delete.png" alt="Delete" /></a></td></tr>');
+	$('#attend-worship-grid .items tbody').prepend('<tr class="' + c + '"><td>' + member_name + ' (' + member_code + ')</td><td>' + attend_time + '</td><td class="button-column"><a class="delete" title="Delete" href="index.php?r=WorshipAttendance/deleteByWorshipMember&amp;worship_member=' + worship_id + '-' + member_id + '"><img src="images/delete.png" alt="Delete" /></a></td></tr>');
 	
 	// update stat
 	$.fn.yiiGridView.update("worship-stat-grid", {url:"index.php?r=worshipAttendance/ajaxWorshipStat"});

@@ -97,7 +97,7 @@ WHERE codeplus1 IS NULL';
 			return "新增 新朋友 " . $this->member_name . "錯誤 ! 敬請願諒 ! ";
 		}
 		
-		$message = "新朋友 " . $member->name . " (" . $member->code . ") 己新增!";
+		$message = "<span style='color:yellow'>新朋友 " . $member->name . " (" . $member->code . ") 己新增!</span>";
 		$message .= "<script type=\"text/javascript\">
 			onTakeSuccess(" . $member->id . ", '" . $member->name . "', '" . $member->code . "', '" . date("H:i") . "');
 			</script>";
