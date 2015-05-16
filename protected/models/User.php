@@ -115,8 +115,8 @@ class User extends CActiveRecord
 
 	protected function beforeSave()
 	{
-		if(!empty($this->new_password))
-			$this->password = md5($this->new_password);
+		if(!empty($this->password))
+			$this->password = md5($this->password);
 
 		if($this->isNewRecord)
 			$this->create_time=$this->update_time=date("Y-m-d H:i:s");
