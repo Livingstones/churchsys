@@ -10,7 +10,7 @@ class FileController extends Controller
 		}
 		
 		$p = urldecode($_REQUEST["p"]);
-		$path = $_SERVER['DOCUMENT_ROOT']."/";
+		$path = Yii::app()->params['upload_dir'] . "/";
 		$fullPath = $path . "file/" . $p;
 		if (empty($p)){
 			echo "Path is Empty!!";

@@ -146,7 +146,7 @@ class HymnController extends Controller
 		{
 			if (!empty($hymn->notation))
 			{
-				$path = 'file/hymn/notation/';
+                $path = Yii::app()->params['upload_dir'] . "/file/hymn/notation/";
 				$old_filename = mb_convert_encoding($hymn->notation, "UTF-8", "Big5,UTF-8");
 				if (file_exists($path . $old_filename))
 				{
@@ -160,7 +160,7 @@ class HymnController extends Controller
 			}
 			if (!empty($hymn->powerpoint))
 			{
-				$path = 'file/hymn/powerpoint/';
+                $path = Yii::app()->params['upload_dir'] . "/file/hymn/powerpoint/";
 				$old_filename = mb_convert_encoding($hymn->powerpoint, "UTF-8", "Big5,UTF-8");
 				if (file_exists($path . $old_filename))
 				{

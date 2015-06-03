@@ -165,22 +165,23 @@ class Hymn extends CActiveRecord
 		$notation = CUploadedFile::getInstance($this,'notation');
 		$midi = CUploadedFile::getInstance($this,'midi');
 		$powerpoint = CUploadedFile::getInstance($this,'powerpoint');
+        $path = Yii::app()->params['upload_dir'] . "/file/";
 		
 		if (is_object($notation))
 		{
-			$notation->saveAs('file/hymn/notation/' . $this->id . "-notation" . $notation->getExtensionName());
+			$notation->saveAs($path . 'hymn/notation/' . $this->id . "-notation" . $notation->getExtensionName());
 			$this->notation = $this->id . "-notation." . $notation->getExtensionName();
 			$ch = true;
 		}
 		if (is_object($midi))
 		{
-			$midi->saveAs('file/hymn/midi/' . $this->id . "-midi" . $midi->getExtensionName());
+			$midi->saveAs($path . 'hymn/midi/' . $this->id . "-midi" . $midi->getExtensionName());
 			$this->midi = $this->id . "-midi." . $midi->getExtensionName();
 			$ch = true;
 		}
 		if (is_object($powerpoint))
 		{
-			$powerpoint->saveAs('file/hymn/powerpoint/' . $this->id . "-powerpoint" . $powerpoint->getExtensionName());
+			$powerpoint->saveAs($path . 'hymn/powerpoint/' . $this->id . "-powerpoint" . $powerpoint->getExtensionName());
 			$this->powerpoint = $this->id . "-powerpoint." . $powerpoint->getExtensionName();
 			$ch = true;
 		}
