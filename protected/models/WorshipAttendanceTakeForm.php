@@ -109,9 +109,16 @@ class WorshipAttendanceTakeForm extends CFormModel
 		$model->member_id = $modelMember->id;
 		$model->attendance_date = $attendance_date;
 		$model->save();
-		
+
+        $gender = (int) $modelMember->gender;
+        $brother_sister = "弟兄/姊妹";
+        if ($gender === 2) {
+            $brother_sister = "弟兄";
+        } elseif ($gender === 1) {
+            $brother_sister = "姊妹";
+        }
 		// General Welcome Message
-		$message = $modelMember->name . " " . ($modelMember->gender == 2 ? "弟兄" : "姊妹") . " 歡迎您!";
+		$message = $modelMember->name . " " . $brother_sister . " 歡迎您!";
 		
 		// Get Birthday Celebrate Message
 		if (date("m-d", strtotime($modelMember->birthday)) >= date("m-d") && date("m-d", strtotime($modelMember->birthday)) <= date("m-d", time() + (7 * 24 * 3600)))
@@ -130,20 +137,22 @@ class WorshipAttendanceTakeForm extends CFormModel
 		$criteria = new CDbCriteria;
 		$criteria->compare('member.account_type','=' . MEMBER::ACCOUNT_TYPE_NEW_MEMBER);
 		$criteria->compare('member_id',$modelMember->id);
-        $worship_count = (int) WorshipAttendance::model()->lastTwoMonth()->with('member')->count($criteria);
+//        $worship_count = (int) WorshipAttendance::model()->lastTwoMonth()->with('member')->count($criteria);
+        // cancel two month limit (edited by Warren Chan Ka Lun 2015-07-22)
+        $worship_count = (int) WorshipAttendance::model()->with('member')->count($criteria);
         // show
 		if ($worship_count >= 6) {
-			$message = "<span style='color: purple'>" . $modelMember->name . "弟兄/姊妹，歡迎你第" . $worship_count . "次參與活石家崇拜，邀請您填交會友資料表格，成為會友。</span>";
+			$message = "<span style='color: purple'>" . $modelMember->name . $brother_sister . "，歡迎你第" . $worship_count . "次參與活石家崇拜，邀請您填交會友資料表格，成為會友。</span>";
 		} elseif ($worship_count === 5) {
-            $message = "<span style='color: purple'>" . $modelMember->name . "弟兄/姊妹，歡迎你第5次參與活石家崇拜。</span>";
+            $message = "<span style='color: purple'>" . $modelMember->name . $brother_sister . "，歡迎你第5次參與活石家崇拜。</span>";
         } elseif ($worship_count === 4) {
-            $message = "<span style='color: purple'>" . $modelMember->name . "弟兄/姊妹，歡迎你第4次參與活石家崇拜。</span>";
+            $message = "<span style='color: purple'>" . $modelMember->name . $brother_sister . "，歡迎你第4次參與活石家崇拜。</span>";
         } elseif ($worship_count === 3) {
-            $message = "<span style='color: purple'>" . $modelMember->name . "弟兄/姊妹，歡迎你第3次參與活石家崇拜。</span>";
+            $message = "<span style='color: purple'>" . $modelMember->name . $brother_sister . "，歡迎你第3次參與活石家崇拜。</span>";
         } elseif ($worship_count === 2) {
-            $message = "<span style='color: purple'>" . $modelMember->name . "弟兄/姊妹，歡迎你第2次參與活石家崇拜。</span>";
+            $message = "<span style='color: purple'>" . $modelMember->name . $brother_sister . "，歡迎你第2次參與活石家崇拜。</span>";
         } elseif ($worship_count === 1) {
-            $message = "<span style='color: yellow'>" . $modelMember->name . "弟兄/姊妹，歡迎你第1次參與活石家崇拜。</span>";
+            $message = "<span style='color: yellow'>" . $modelMember->name . $brother_sister . "，歡迎你第1次參與活石家崇拜。</span>";
         }
 		
 		if ($modelMember->new_card == MEMBER::NEW_CARD_WAITING_CARD) {
