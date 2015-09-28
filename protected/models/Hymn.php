@@ -166,7 +166,10 @@ class Hymn extends CActiveRecord
 		$midi = CUploadedFile::getInstance($this,'midi');
 		$powerpoint = CUploadedFile::getInstance($this,'powerpoint');
         $path = Yii::app()->params['upload_dir'] . "/file/";
-		
+		print_r($notation);
+        print_r($midi);
+        print_r($powerpoint);
+        exit(0);
 		if (is_object($notation))
 		{
 			$notation->saveAs($path . 'hymn/notation/' . $this->id . "-notation" . $notation->getExtensionName());
