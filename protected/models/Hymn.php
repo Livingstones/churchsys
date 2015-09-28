@@ -166,6 +166,7 @@ class Hymn extends CActiveRecord
 		$midi = CUploadedFile::getInstance($this,'midi');
 		$powerpoint = CUploadedFile::getInstance($this,'powerpoint');
         $path = Yii::app()->params['upload_dir'] . "/file/";
+        echo $this->notation . ';;' . $this->midi . ';;' . $this->powerpoint;
 		print_r($notation);
         print_r($midi);
         print_r($powerpoint);
