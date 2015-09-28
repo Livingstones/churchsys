@@ -2,6 +2,67 @@
 
 class WorshipAttendanceController extends Controller
 {
+
+    public function actionMobileTake()
+    {
+        Yii::app()->theme = 'mobile';
+
+        $model=new WorshipAttendanceTakeForm;
+        $model_new=new WorshipAttendanceNewForm;
+
+        // worship data
+        $query = "SELECT worship.id AS id, " .
+            "worship.name AS name, " .
+            "SUM(member.id > 0 AND DATE(NOW())=DATE(worship_attendance.attendance_date)) AS memberCount, " .
+            "SUM(member.id > 0 AND DATE(member.arrived_date)=DATE(NOW()) AND DATE(NOW())=DATE(worship_attendance.attendance_date)) AS newMemberCount " .
+            "FROM tbl_worship AS worship " .
+            "LEFT JOIN tbl_worship_attendance AS worship_attendance ON worship_attendance.worship_id=worship.id " .
+            "LEFT JOIN tbl_member AS member ON member.id=worship_attendance.member_id " .
+            "WHERE DAYOFWEEK(NOW())=weekly+1 " .
+            "GROUP BY worship.id " .
+            "ORDER BY worship.start_time ASC";
+        $worshipData=Yii::app()->db->createCommand($query)->queryAll();
+        $worshipDataProvider=new CArrayDataProvider($worshipData, array(
+            'id'=>'worshipData',
+        ));
+
+        $query = "SELECT id, name
+FROM tbl_worship
+WHERE DAYOFWEEK(NOW())=weekly+1 AND start_time<=CURTIME() AND end_time>=CURTIME()";
+        $curWorshipData=Yii::app()->db->createCommand($query)->queryAll();
+        $worship_id = 0;
+        $worship_name = "";
+        if (count($curWorshipData) > 0){
+            $worship_id = $curWorshipData[0]["id"];
+            $worship_name = $curWorshipData[0]["name"];
+        } elseif (count($worshipData) > 0){
+            $worship_id = $worshipData[0]["id"];
+            $worship_name = $worshipData[0]["name"];
+        }
+
+        $query = "SELECT CONCAT(attendance.worship_id, '-', member.id) AS id, member.name AS name, member.code AS code, attendance_date " .
+            "FROM tbl_worship_attendance AS attendance " .
+            "INNER JOIN tbl_member AS member ON member.id=attendance.member_id " .
+            "WHERE attendance.worship_id=" . ($worship_id) . " " .
+            "AND DATE(attendance_date)=DATE(NOW()) " .
+            "ORDER BY attendance.attendance_date DESC";
+        $attendanceData=Yii::app()->db->createCommand($query)->queryAll();
+        $attendanceDataProvider=new CArrayDataProvider($attendanceData, array(
+            'id'=>'attendanceData',
+            'pagination'=>array(
+                'pageSize'=>99999,
+            ),
+        ));
+
+        $this->render('take', array(
+            'model'=>$model,
+            'model_new'=>$model_new,
+            'worshipDataProvider'=>$worshipDataProvider,
+            'attendanceDataProvider'=>$attendanceDataProvider,
+            'worship_id'=>$worship_id,
+            'worship_name'=>$worship_name,
+        ));
+    }
 	
 	public function actionTake()
 	{
