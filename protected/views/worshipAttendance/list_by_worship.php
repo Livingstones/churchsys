@@ -15,7 +15,7 @@ $this->breadcrumbs=array(
 			'labelExpression' => 'DATE("Y-m-d", strtotime($data["attendance_date"]))',
 			'urlExpression' => 'Yii::app()->createUrl("/worshipAttendance/listByDate&date=" . DATE("Y-m-d", strtotime($data["attendance_date"])))',
 		));
-	$worship_list = Worship::model()->findAll();
+	$worship_list = Worship::model()->findAll('state=1');
 	
 	foreach ($worship_list as $worship)
 	{
