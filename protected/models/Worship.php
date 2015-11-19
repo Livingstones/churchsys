@@ -5,6 +5,7 @@
  *
  * The followings are the available columns in table 'tbl_worship':
  * @property integer $id
+ * @property integer $state
  * @property string $name
  * @property string $start_time
  * @property string $end_time
@@ -61,7 +62,7 @@ class Worship extends CActiveRecord
 			array('name', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, name, start_time, end_time, weekly, remarks', 'safe', 'on'=>'search'),
+			array('id, name, state, start_time, end_time, weekly, remarks', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -87,6 +88,7 @@ class Worship extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
+			'state' => 'State',
 			'name' => '名稱',
 			'start_time' => '開始時間',
 			'end_time' => '結束時間',
@@ -108,6 +110,7 @@ class Worship extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
+		$criteria->compare('state', 1);
 		$criteria->compare('name',$this->name,true);
 		$criteria->compare('start_time',$this->start_time,true);
 		$criteria->compare('end_time',$this->end_time,true);

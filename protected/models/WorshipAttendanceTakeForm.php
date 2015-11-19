@@ -54,7 +54,7 @@ class WorshipAttendanceTakeForm extends CFormModel
 		// Check Member
 		if (empty($this->member_code) && !empty($this->member_name))
 		{
-			$members = Member::model()->findAllByAttributes(array("name" => $this->member_name));
+			$members = Member::model()->findAllByAttributes(array("name" => $this->member_name, "state"=>1));
 			if (count($members) > 1)
 			{
 				$message = "";
@@ -72,7 +72,7 @@ class WorshipAttendanceTakeForm extends CFormModel
 		$modelMember = Member::model()->findByAttributes(array("code" => $this->member_code));
 		if ($modelMember===null)
 		{
-			$members = Member::model()->findAllByAttributes(array("name" => $this->member_code));
+			$members = Member::model()->findAllByAttributes(array("name" => $this->member_code, "state"=>1));
 			if (count($members) > 1)
 			{
 				$message = "";

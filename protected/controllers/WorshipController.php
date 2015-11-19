@@ -66,6 +66,7 @@ class WorshipController extends Controller
 		if(isset($_POST['Worship']))
 		{
 			$model->attributes=$_POST['Worship'];
+			$model->state=1;
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -109,8 +110,10 @@ class WorshipController extends Controller
 		if(Yii::app()->request->isPostRequest)
 		{
 			// we only allow deletion via POST request
-			$this->loadModel($id)->delete();
-
+//			$this->loadModel($id)->delete();
+			$model = $this->loadModel($id);
+			$model->state = 0;
+			$model->save();
 			// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 			if(!isset($_GET['ajax']))
 				$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));

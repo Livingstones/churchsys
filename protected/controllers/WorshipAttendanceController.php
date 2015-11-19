@@ -77,7 +77,7 @@ WHERE DAYOFWEEK(NOW())=weekly+1 AND start_time<=CURTIME() AND end_time>=CURTIME(
 				"FROM tbl_worship AS worship " .
 				"LEFT JOIN tbl_worship_attendance AS worship_attendance ON worship_attendance.worship_id=worship.id " .
 				"LEFT JOIN tbl_member AS member ON member.id=worship_attendance.member_id " .
-				"WHERE DAYOFWEEK(NOW())=weekly+1 " .
+				"WHERE DAYOFWEEK(NOW())=weekly+1 AND worship.state=1 " .
 				"GROUP BY worship.id " . 
 				"ORDER BY worship.start_time ASC";
 		$worshipData=Yii::app()->db->createCommand($query)->queryAll();
@@ -87,7 +87,7 @@ WHERE DAYOFWEEK(NOW())=weekly+1 AND start_time<=CURTIME() AND end_time>=CURTIME(
 		
 		$query = "SELECT id, name
 FROM tbl_worship
-WHERE DAYOFWEEK(NOW())=weekly+1 AND start_time<=CURTIME() AND end_time>=CURTIME()";
+WHERE DAYOFWEEK(NOW())=weekly+1 AND state=1 AND start_time<=CURTIME() AND end_time>=CURTIME()";
 		$curWorshipData=Yii::app()->db->createCommand($query)->queryAll();
 		$worship_id = 0;
 		$worship_name = "";
@@ -125,7 +125,7 @@ WHERE DAYOFWEEK(NOW())=weekly+1 AND start_time<=CURTIME() AND end_time>=CURTIME(
 	
 	public function actionAjaxTake()
 	{
-		if (!isset($_POST['WorshipAttendanceTakeForm']))
+		if (!isset($_POST['WorshipAttendanceTakeForm']) || $_POST['WorshipAttendanceTakeForm']['member_code'] === '')
 		{
 			Yii::app()->end();
 		}
