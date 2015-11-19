@@ -17,7 +17,7 @@
  */
 class WorshipAttendance extends CActiveRecord
 {
-	public $w1, $w2, $w3, $w4, $w5, $w6, $w7, $w8, $w9, $w10, $w11, $w12, $w13, $w14, $w15;
+	public $w1, $w2, $w3, $w4, $w5, $w6, $w7, $w8, $w9, $w10, $w11, $w12, $w13, $w14, $w15, $w16, $w17, $w18;
 	
 	/**
 	 * Returns the static model of the specified AR class.
@@ -157,6 +157,7 @@ class WorshipAttendance extends CActiveRecord
 			$modelMember->assignedGroups = $_GET['Member']['assignedGroups'];
 		}
 		$criteria=new CDbCriteria;
+		$criteria->compare('state',1);
 		$criteria->compare('code',$modelMember->code,true);
 		$criteria->compare('account_type',$modelMember->account_type);
 		$criteria->compare('group_id',$modelMember->assignedGroups);
@@ -172,6 +173,7 @@ class WorshipAttendance extends CActiveRecord
 		$criteria->together=true;
 		$criteria->group = "t.id";
 		$criteria->having = "MAX(DATE(attendance_date))='" . date('Y-m-d', strtotime($_REQUEST['date'])) . "'";
+		$criteria->condition = "DATE(attendance_date)<='" . date('Y-m-d', strtotime($_REQUEST['date'])) . "'";
 		$criteria->order = "worshipAttendancesLastDate";
 		
 		return new CActiveDataProvider(get_class($modelMember), array(

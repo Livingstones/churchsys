@@ -60,6 +60,7 @@ class Worship extends CActiveRecord
 			array('name, start_time, end_time, weekly', 'required'),
 			array('weekly', 'numerical', 'integerOnly'=>true),
 			array('name', 'length', 'max'=>255),
+			array('remarks', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, name, state, start_time, end_time, weekly, remarks', 'safe', 'on'=>'search'),
