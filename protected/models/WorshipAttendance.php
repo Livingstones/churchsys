@@ -124,6 +124,52 @@ class WorshipAttendance extends CActiveRecord
 			
 		));
 	}
+
+	public function searchByWorshipWeek()
+	{
+		// Warning: Please modify the following code to remove attributes that
+		// should not be searched.
+		$modelMember = Member::model();
+		$weekNumber = (int) $_GET['weekno'];
+		$worship_id = (int) $_GET['worship_id'];
+		$year = (int) $_GET['year'];
+		$criteria=new CDbCriteria;
+		$criteria->compare('worship_id',$worship_id);
+		$criteria->select = "t.*," . 
+							"w.name AS worshipName," . 
+							"MAX(attendance_date) AS worshipAttendancesLastDate," . 
+							"SUM(attendance_date >= '" . date("Y-m-d", strtotime("-2 months")) . "') AS worshipAttendancesTwoMonthCount," . 
+							"SUM(attendance_date >= '" . date("Y-m-d", strtotime("-6 months")) . "') AS worshipAttendancesSixMonthCount," . 
+							"SUM(attendance_date >= '" . date("Y-m-d", strtotime("-1 year")) . "') AS worshipAttendancesYearCount";
+		$criteria->join = "RIGHT JOIN tbl_worship_attendance AS worshipAttendance ON worshipAttendance.member_id=t.id INNER JOIN tbl_worship AS w ON w.id=worshipAttendance.worship_id ";
+		$criteria->with = array("groups", "worshipAttendancesLastDate", "worshipAttendancesTwoMonthCount", "worshipAttendancesSixMonthCount", "worshipAttendancesYearCount");
+		$criteria->together=true;
+		$criteria->group = "t.id";
+		$criteria->having = "MAX(YEAR(attendance_date))='" . $year . "' AND MAX(WEEKOFYEAR(attendance_date))='" . $weekNumber . "'";
+//		$criteria->having = "YEAR(worshipAttendance.attendance_date)='" . $year . "' AND WEEKOFYEAR(worshipAttendance.attendance_date)='" . $weekNumber . "'";
+		$criteria->condition = "t.state=1 AND worshipAttendance.worship_id='" . $worship_id . "' AND WEEKOFYEAR(worshipAttendance.attendance_date)='" . $weekNumber . "' AND YEAR(worshipAttendance.attendance_date)='" . $year . "'";
+		$criteria->order = "worshipAttendancesLastDate";
+		
+		return new CActiveDataProvider(get_class($modelMember), array(
+			'criteria'=>$criteria,
+			'pagination' => array(
+				'pageSize' => 30,
+			),
+			'sort' => array( 
+				'attributes' => array(
+					'code' => array('asc' => 't.id', 'desc' => 't.id DESC'),
+					'account_type' => array('asc' => 'account_type', 'desc' => 'account_type DESC'),
+					'worshipName' => array('asc'=>'worshipName', 'desc' => 'worshipName DESC'),
+					'worshipAttendancesLastDate' => array('asc' => 'worshipAttendancesLastDate', 'desc' => 'worshipAttendancesLastDate DESC'),
+					'worshipAttendancesTwoMonthCount' => array('asc' => 'worshipAttendancesTwoMonthCount DESC', 'desc' => 'worshipAttendancesTwoMonthCount'),
+					'worshipAttendancesSixMonthCount' => array('asc' => 'worshipAttendancesSixMonthCount DESC', 'desc' => 'worshipAttendancesSixMonthCount'),
+					'worshipAttendancesYearCount' => array('asc' => 'worshipAttendancesYearCount DESC', 'desc' => 'worshipAttendancesYearCount'),
+				), 
+				'defaultOrder' => array('worshipAttendancesLastDate'),
+			),
+			
+		));
+	}
 	
 	public function searchByWorship()
 	{
@@ -157,23 +203,23 @@ class WorshipAttendance extends CActiveRecord
 			$modelMember->assignedGroups = $_GET['Member']['assignedGroups'];
 		}
 		$criteria=new CDbCriteria;
-		$criteria->compare('state',1);
 		$criteria->compare('code',$modelMember->code,true);
 		$criteria->compare('account_type',$modelMember->account_type);
 		$criteria->compare('group_id',$modelMember->assignedGroups);
 		//$criteria->compare('t.name',$this->member_id,true);
 		//$criteria->compare('worship_id',$this->worship_id);
 		$criteria->select = "t.*," . 
+							"w.name AS worshipName," . 
 							"MAX(attendance_date) AS worshipAttendancesLastDate," . 
 							"SUM(attendance_date >= '" . date("Y-m-d", strtotime("-2 months")) . "') AS worshipAttendancesTwoMonthCount," . 
 							"SUM(attendance_date >= '" . date("Y-m-d", strtotime("-6 months")) . "') AS worshipAttendancesSixMonthCount," . 
 							"SUM(attendance_date >= '" . date("Y-m-d", strtotime("-1 year")) . "') AS worshipAttendancesYearCount";
-		$criteria->join = "INNER JOIN tbl_worship_attendance AS worshipAttendance ON worshipAttendance.member_id=t.id";
+		$criteria->join = "RIGHT JOIN tbl_worship_attendance AS worshipAttendance ON worshipAttendance.member_id=t.id INNER JOIN tbl_worship AS w ON w.id=worshipAttendance.worship_id ";
 		$criteria->with = array("groups", "worshipAttendancesLastDate", "worshipAttendancesTwoMonthCount", "worshipAttendancesSixMonthCount", "worshipAttendancesYearCount");
 		$criteria->together=true;
 		$criteria->group = "t.id";
 		$criteria->having = "MAX(DATE(attendance_date))='" . date('Y-m-d', strtotime($_REQUEST['date'])) . "'";
-		$criteria->condition = "DATE(attendance_date)<='" . date('Y-m-d', strtotime($_REQUEST['date'])) . "'";
+		$criteria->condition = "t.state=1 AND DATE(worshipAttendance.attendance_date)='" . date('Y-m-d', strtotime($_REQUEST['date'])) . "'";
 		$criteria->order = "worshipAttendancesLastDate";
 		
 		return new CActiveDataProvider(get_class($modelMember), array(
@@ -186,6 +232,7 @@ class WorshipAttendance extends CActiveRecord
 					'code' => array('asc' => 't.id', 'desc' => 't.id DESC'),
 					'account_type' => array('asc' => 'account_type', 'desc' => 'account_type DESC'),
 					//'groupMember.groups' => array('asc' => 'groupMember.groups', 'desc' => 'groupMember.groups DESC'),
+					'worshipName' => array('asc'=>'worshipName', 'desc' => 'worshipName DESC'),
 					'worshipAttendancesLastDate' => array('asc' => 'worshipAttendancesLastDate', 'desc' => 'worshipAttendancesLastDate DESC'),
 					'worshipAttendancesTwoMonthCount' => array('asc' => 'worshipAttendancesTwoMonthCount DESC', 'desc' => 'worshipAttendancesTwoMonthCount'),
 					'worshipAttendancesSixMonthCount' => array('asc' => 'worshipAttendancesSixMonthCount DESC', 'desc' => 'worshipAttendancesSixMonthCount'),

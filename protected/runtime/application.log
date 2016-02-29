@@ -4801,3 +4801,112 @@ Stack trace:
 #35 /home/www/yii/framework/base/CApplication.php(155): CWebApplication->processRequest()
 #36 /home/www/churchsys2/index.php(15): CWebApplication->run()
 REQUEST_URI=/churchsys2/index.php?r=group/view&id=50
+2015/12/15 18:05:05 [trace] [system.CModule] Loading "log" application component
+2015/12/15 18:05:05 [trace] [system.CModule] Loading "request" application component
+2015/12/15 18:05:05 [trace] [system.CModule] Loading "urlManager" application component
+2015/12/15 18:05:05 [trace] [system.CModule] Loading "db" application component
+2015/12/15 18:05:05 [trace] [system.db.CDbConnection] Opening DB connection
+2015/12/15 18:05:05 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_worship_attendance`
+2015/12/15 18:05:05 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_worship_attendance`
+2015/12/15 18:05:05 [trace] [system.db.ar.CActiveRecord] Group.findAll()
+2015/12/15 18:05:05 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_group`
+2015/12/15 18:05:05 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_group`
+2015/12/15 18:05:05 [trace] [system.db.CDbCommand] Querying SQL: SELECT * FROM `tbl_group` `t`
+2015/12/15 18:05:05 [trace] [system.db.ar.CActiveRecord] lazy loading Group.period
+2015/12/15 18:05:05 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_group_period`
+2015/12/15 18:05:05 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_group_period`
+2015/12/15 18:05:05 [trace] [system.db.CDbCommand] Querying SQL: SELECT `period`.`id` AS `t1_c0`, `period`.`name` AS `t1_c1`, `period`.`description` AS `t1_c2` FROM `tbl_group_period` `period`  WHERE (`period`.`id`=:ypl0)
+2015/12/15 18:05:05 [trace] [system.db.ar.CActiveRecord] lazy loading Group.period
+2015/12/15 18:05:05 [trace] [system.db.CDbCommand] Querying SQL: SELECT `period`.`id` AS `t1_c0`, `period`.`name` AS `t1_c1`, `period`.`description` AS `t1_c2` FROM `tbl_group_period` `period`  WHERE (`period`.`id`=:ypl0)
+2015/12/15 18:05:05 [trace] [system.db.ar.CActiveRecord] lazy loading Group.period
+2015/12/15 18:05:05 [trace] [system.db.CDbCommand] Querying SQL: SELECT `period`.`id` AS `t1_c0`, `period`.`name` AS `t1_c1`, `period`.`description` AS `t1_c2` FROM `tbl_group_period` `period`  WHERE (`period`.`id`=:ypl0)
+2015/12/15 18:05:05 [trace] [system.db.ar.CActiveRecord] lazy loading Group.period
+2015/12/15 18:05:05 [trace] [system.db.CDbCommand] Querying SQL: SELECT `period`.`id` AS `t1_c0`, `period`.`name` AS `t1_c1`, `period`.`description` AS `t1_c2` FROM `tbl_group_period` `period`  WHERE (`period`.`id`=:ypl0)
+2015/12/15 18:05:05 [trace] [system.db.ar.CActiveRecord] lazy loading Group.period
+2015/12/15 18:05:05 [trace] [system.db.CDbCommand] Querying SQL: SELECT `period`.`id` AS `t1_c0`, `period`.`name` AS `t1_c1`, `period`.`description` AS `t1_c2` FROM `tbl_group_period` `period`  WHERE (`period`.`id`=:ypl0)
+2015/12/15 18:05:05 [trace] [system.db.ar.CActiveRecord] lazy loading Group.period
+2015/12/15 18:05:05 [trace] [system.db.CDbCommand] Querying SQL: SELECT `period`.`id` AS `t1_c0`, `period`.`name` AS `t1_c1`, `period`.`description` AS `t1_c2` FROM `tbl_group_period` `period`  WHERE (`period`.`id`=:ypl0)
+2015/12/15 18:05:05 [trace] [system.db.ar.CActiveRecord] lazy loading Group.period
+2015/12/15 18:05:05 [trace] [system.db.CDbCommand] Querying SQL: SELECT `period`.`id` AS `t1_c0`, `period`.`name` AS `t1_c1`, `period`.`description` AS `t1_c2` FROM `tbl_group_period` `period`  WHERE (`period`.`id`=:ypl0)
+2015/12/15 18:05:05 [trace] [system.db.ar.CActiveRecord] lazy loading Group.period
+2015/12/15 18:05:05 [trace] [system.db.CDbCommand] Querying SQL: SELECT `period`.`id` AS `t1_c0`, `period`.`name` AS `t1_c1`, `period`.`description` AS `t1_c2` FROM `tbl_group_period` `period`  WHERE (`period`.`id`=:ypl0)
+2015/12/15 18:05:05 [trace] [system.db.ar.CActiveRecord] lazy loading Group.period
+2015/12/15 18:05:05 [trace] [system.db.CDbCommand] Querying SQL: SELECT `period`.`id` AS `t1_c0`, `period`.`name` AS `t1_c1`, `period`.`description` AS `t1_c2` FROM `tbl_group_period` `period`  WHERE (`period`.`id`=:ypl0)
+2015/12/15 18:05:05 [trace] [system.db.ar.CActiveRecord] lazy loading Group.period
+2015/12/15 18:05:05 [trace] [system.db.CDbCommand] Querying SQL: SELECT `period`.`id` AS `t1_c0`, `period`.`name` AS `t1_c1`, `period`.`description` AS `t1_c2` FROM `tbl_group_period` `period`  WHERE (`period`.`id`=:ypl0)
+2015/12/15 18:05:05 [trace] [system.db.ar.CActiveRecord] lazy loading Group.period
+2015/12/15 18:05:05 [trace] [system.db.CDbCommand] Querying SQL: SELECT `period`.`id` AS `t1_c0`, `period`.`name` AS `t1_c1`, `period`.`description` AS `t1_c2` FROM `tbl_group_period` `period`  WHERE (`period`.`id`=:ypl0)
+2015/12/15 18:05:05 [trace] [system.db.ar.CActiveRecord] lazy loading Group.period
+2015/12/15 18:05:05 [trace] [system.db.CDbCommand] Querying SQL: SELECT `period`.`id` AS `t1_c0`, `period`.`name` AS `t1_c1`, `period`.`description` AS `t1_c2` FROM `tbl_group_period` `period`  WHERE (`period`.`id`=:ypl0)
+2015/12/15 18:05:05 [trace] [system.db.ar.CActiveRecord] lazy loading Group.period
+2015/12/15 18:05:05 [trace] [system.db.CDbCommand] Querying SQL: SELECT `period`.`id` AS `t1_c0`, `period`.`name` AS `t1_c1`, `period`.`description` AS `t1_c2` FROM `tbl_group_period` `period`  WHERE (`period`.`id`=:ypl0)
+2015/12/15 18:05:05 [trace] [system.db.ar.CActiveRecord] lazy loading Group.period
+2015/12/15 18:05:05 [trace] [system.db.CDbCommand] Querying SQL: SELECT `period`.`id` AS `t1_c0`, `period`.`name` AS `t1_c1`, `period`.`description` AS `t1_c2` FROM `tbl_group_period` `period`  WHERE (`period`.`id`=:ypl0)
+2015/12/15 18:05:05 [trace] [system.db.ar.CActiveRecord] lazy loading Group.period
+2015/12/15 18:05:05 [trace] [system.db.CDbCommand] Querying SQL: SELECT `period`.`id` AS `t1_c0`, `period`.`name` AS `t1_c1`, `period`.`description` AS `t1_c2` FROM `tbl_group_period` `period`  WHERE (`period`.`id`=:ypl0)
+2015/12/15 18:05:05 [trace] [system.db.ar.CActiveRecord] lazy loading Group.period
+2015/12/15 18:05:05 [trace] [system.db.CDbCommand] Querying SQL: SELECT `period`.`id` AS `t1_c0`, `period`.`name` AS `t1_c1`, `period`.`description` AS `t1_c2` FROM `tbl_group_period` `period`  WHERE (`period`.`id`=:ypl0)
+2015/12/15 18:05:05 [trace] [system.db.ar.CActiveRecord] lazy loading Group.period
+2015/12/15 18:05:05 [trace] [system.db.CDbCommand] Querying SQL: SELECT `period`.`id` AS `t1_c0`, `period`.`name` AS `t1_c1`, `period`.`description` AS `t1_c2` FROM `tbl_group_period` `period`  WHERE (`period`.`id`=:ypl0)
+2015/12/15 18:05:05 [trace] [system.db.ar.CActiveRecord] lazy loading Group.period
+2015/12/15 18:05:05 [trace] [system.db.CDbCommand] Querying SQL: SELECT `period`.`id` AS `t1_c0`, `period`.`name` AS `t1_c1`, `period`.`description` AS `t1_c2` FROM `tbl_group_period` `period`  WHERE (`period`.`id`=:ypl0)
+2015/12/15 18:05:05 [trace] [system.db.ar.CActiveRecord] lazy loading Group.period
+2015/12/15 18:05:05 [trace] [system.db.CDbCommand] Querying SQL: SELECT `period`.`id` AS `t1_c0`, `period`.`name` AS `t1_c1`, `period`.`description` AS `t1_c2` FROM `tbl_group_period` `period`  WHERE (`period`.`id`=:ypl0)
+2015/12/15 18:05:05 [trace] [system.db.ar.CActiveRecord] lazy loading Group.period
+2015/12/15 18:05:05 [trace] [system.db.CDbCommand] Querying SQL: SELECT `period`.`id` AS `t1_c0`, `period`.`name` AS `t1_c1`, `period`.`description` AS `t1_c2` FROM `tbl_group_period` `period`  WHERE (`period`.`id`=:ypl0)
+2015/12/15 18:05:05 [trace] [system.db.ar.CActiveRecord] lazy loading Group.period
+2015/12/15 18:05:05 [trace] [system.db.CDbCommand] Querying SQL: SELECT `period`.`id` AS `t1_c0`, `period`.`name` AS `t1_c1`, `period`.`description` AS `t1_c2` FROM `tbl_group_period` `period`  WHERE (`period`.`id`=:ypl0)
+2015/12/15 18:05:05 [trace] [system.db.ar.CActiveRecord] lazy loading Group.period
+2015/12/15 18:05:05 [trace] [system.db.CDbCommand] Querying SQL: SELECT `period`.`id` AS `t1_c0`, `period`.`name` AS `t1_c1`, `period`.`description` AS `t1_c2` FROM `tbl_group_period` `period`  WHERE (`period`.`id`=:ypl0)
+2015/12/15 18:05:05 [trace] [system.db.ar.CActiveRecord] lazy loading Group.period
+2015/12/15 18:05:05 [trace] [system.db.CDbCommand] Querying SQL: SELECT `period`.`id` AS `t1_c0`, `period`.`name` AS `t1_c1`, `period`.`description` AS `t1_c2` FROM `tbl_group_period` `period`  WHERE (`period`.`id`=:ypl0)
+2015/12/15 18:05:05 [trace] [system.db.ar.CActiveRecord] lazy loading Group.period
+2015/12/15 18:05:05 [trace] [system.db.CDbCommand] Querying SQL: SELECT `period`.`id` AS `t1_c0`, `period`.`name` AS `t1_c1`, `period`.`description` AS `t1_c2` FROM `tbl_group_period` `period`  WHERE (`period`.`id`=:ypl0)
+2015/12/15 18:05:05 [trace] [system.db.ar.CActiveRecord] lazy loading Group.period
+2015/12/15 18:05:05 [trace] [system.db.CDbCommand] Querying SQL: SELECT `period`.`id` AS `t1_c0`, `period`.`name` AS `t1_c1`, `period`.`description` AS `t1_c2` FROM `tbl_group_period` `period`  WHERE (`period`.`id`=:ypl0)
+2015/12/15 18:05:05 [trace] [system.db.ar.CActiveRecord] lazy loading Group.period
+2015/12/15 18:05:05 [trace] [system.db.CDbCommand] Querying SQL: SELECT `period`.`id` AS `t1_c0`, `period`.`name` AS `t1_c1`, `period`.`description` AS `t1_c2` FROM `tbl_group_period` `period`  WHERE (`period`.`id`=:ypl0)
+2015/12/15 18:05:05 [trace] [system.db.ar.CActiveRecord] lazy loading Group.period
+2015/12/15 18:05:05 [trace] [system.db.CDbCommand] Querying SQL: SELECT `period`.`id` AS `t1_c0`, `period`.`name` AS `t1_c1`, `period`.`description` AS `t1_c2` FROM `tbl_group_period` `period`  WHERE (`period`.`id`=:ypl0)
+2015/12/15 18:05:05 [trace] [system.db.ar.CActiveRecord] lazy loading Group.period
+2015/12/15 18:05:05 [trace] [system.db.CDbCommand] Querying SQL: SELECT `period`.`id` AS `t1_c0`, `period`.`name` AS `t1_c1`, `period`.`description` AS `t1_c2` FROM `tbl_group_period` `period`  WHERE (`period`.`id`=:ypl0)
+2015/12/15 18:05:05 [trace] [system.db.ar.CActiveRecord] lazy loading Group.period
+2015/12/15 18:05:05 [trace] [system.db.CDbCommand] Querying SQL: SELECT `period`.`id` AS `t1_c0`, `period`.`name` AS `t1_c1`, `period`.`description` AS `t1_c2` FROM `tbl_group_period` `period`  WHERE (`period`.`id`=:ypl0)
+2015/12/15 18:05:05 [trace] [system.db.ar.CActiveRecord] lazy loading Group.period
+2015/12/15 18:05:05 [trace] [system.db.CDbCommand] Querying SQL: SELECT `period`.`id` AS `t1_c0`, `period`.`name` AS `t1_c1`, `period`.`description` AS `t1_c2` FROM `tbl_group_period` `period`  WHERE (`period`.`id`=:ypl0)
+2015/12/15 18:05:05 [trace] [system.db.ar.CActiveRecord] lazy loading Group.period
+2015/12/15 18:05:05 [trace] [system.db.CDbCommand] Querying SQL: SELECT `period`.`id` AS `t1_c0`, `period`.`name` AS `t1_c1`, `period`.`description` AS `t1_c2` FROM `tbl_group_period` `period`  WHERE (`period`.`id`=:ypl0)
+2015/12/15 18:05:05 [trace] [system.db.ar.CActiveRecord] lazy loading Group.period
+2015/12/15 18:05:05 [trace] [system.db.CDbCommand] Querying SQL: SELECT `period`.`id` AS `t1_c0`, `period`.`name` AS `t1_c1`, `period`.`description` AS `t1_c2` FROM `tbl_group_period` `period`  WHERE (`period`.`id`=:ypl0)
+2015/12/15 18:05:05 [trace] [system.db.ar.CActiveRecord] lazy loading Group.period
+2015/12/15 18:05:05 [trace] [system.db.CDbCommand] Querying SQL: SELECT `period`.`id` AS `t1_c0`, `period`.`name` AS `t1_c1`, `period`.`description` AS `t1_c2` FROM `tbl_group_period` `period`  WHERE (`period`.`id`=:ypl0)
+2015/12/15 18:05:05 [trace] [system.db.ar.CActiveRecord] lazy loading Group.period
+2015/12/15 18:05:05 [trace] [system.db.CDbCommand] Querying SQL: SELECT `period`.`id` AS `t1_c0`, `period`.`name` AS `t1_c1`, `period`.`description` AS `t1_c2` FROM `tbl_group_period` `period`  WHERE (`period`.`id`=:ypl0)
+2015/12/15 18:05:05 [trace] [system.db.ar.CActiveRecord] lazy loading Group.period
+2015/12/15 18:05:05 [trace] [system.db.CDbCommand] Querying SQL: SELECT `period`.`id` AS `t1_c0`, `period`.`name` AS `t1_c1`, `period`.`description` AS `t1_c2` FROM `tbl_group_period` `period`  WHERE (`period`.`id`=:ypl0)
+2015/12/15 18:05:05 [trace] [system.db.ar.CActiveRecord] lazy loading Group.period
+2015/12/15 18:05:05 [trace] [system.db.CDbCommand] Querying SQL: SELECT `period`.`id` AS `t1_c0`, `period`.`name` AS `t1_c1`, `period`.`description` AS `t1_c2` FROM `tbl_group_period` `period`  WHERE (`period`.`id`=:ypl0)
+2015/12/15 18:05:05 [trace] [system.db.ar.CActiveRecord] lazy loading Group.period
+2015/12/15 18:05:05 [trace] [system.db.CDbCommand] Querying SQL: SELECT `period`.`id` AS `t1_c0`, `period`.`name` AS `t1_c1`, `period`.`description` AS `t1_c2` FROM `tbl_group_period` `period`  WHERE (`period`.`id`=:ypl0)
+2015/12/15 18:05:05 [trace] [system.db.ar.CActiveRecord] lazy loading Group.period
+2015/12/15 18:05:05 [trace] [system.db.CDbCommand] Querying SQL: SELECT `period`.`id` AS `t1_c0`, `period`.`name` AS `t1_c1`, `period`.`description` AS `t1_c2` FROM `tbl_group_period` `period`  WHERE (`period`.`id`=:ypl0)
+2015/12/15 18:05:05 [trace] [system.CModule] Loading "widgetFactory" application component
+2015/12/15 18:05:05 [trace] [system.db.ar.CActiveRecord] Member.count()
+2015/12/15 18:05:05 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_member`
+2015/12/15 18:05:05 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_member`
+2015/12/15 18:05:05 [trace] [system.db.ar.CActiveRecord] Member.count() eagerly
+2015/12/15 18:05:05 [trace] [system.db.CDbCommand] Querying SQL: SHOW FULL COLUMNS FROM `tbl_group_member`
+2015/12/15 18:05:05 [trace] [system.db.CDbCommand] Querying SQL: SHOW CREATE TABLE `tbl_group_member`
+2015/12/15 18:05:05 [trace] [system.db.CDbCommand] Querying SQL: SELECT COUNT(*) FROM (SELECT `t`.`id` AS `t0_c0`, `t`.`state` AS `t0_c1`, `t`.`code` AS `t0_c2`, `t`.`name` AS `t0_c3`, `t`.`remarks` AS `t0_c4`, `t`.`english_name` AS `t0_c5`, `t`.`photo` AS `t0_c6`, `t`.`gender` AS `t0_c7`, `t`.`birthday` AS `t0_c8`, `t`.`email` AS `t0_c9`, `t`.`believe` AS `t0_c10`, `t`.`believe_date` AS `t0_c11`, `t`.`baptized` AS `t0_c12`, `t`.`baptized_date` AS `t0_c13`, `t`.`account_type` AS `t0_c14`, `t`.`new_card` AS `t0_c15`, `t`.`arrived_date` AS `t0_c16`, `t`.`create_date` AS `t0_c17`, `t`.`modify_date` AS `t0_c18`, `t`.`creator_id` AS `t0_c19`, `t`.`modifier_id` AS `t0_c20`, `t`.`address_district` AS `t0_c21`, `t`.`address_estate` AS `t0_c22`, `t`.`address_house` AS `t0_c23`, `t`.`address_flat` AS `t0_c24`, `t`.`contact_home` AS `t0_c25`, `t`.`contact_mobile` AS `t0_c26`, `t`.`contact_office` AS `t0_c27`, `t`.`contact_others` AS `t0_c28`, w.name AS worshipName, MAX(attendance_date) AS worshipAttendancesLastDate, SUM(attendance_date >= '2015-10-15') AS worshipAttendancesTwoMonthCount, SUM(attendance_date >= '2015-06-15') AS worshipAttendancesSixMonthCount, SUM(attendance_date >= '2014-12-15') AS worshipAttendancesYearCount, `groups`.`id` AS `t1_c0`, `groups`.`name` AS `t1_c1`, `groups`.`period_id` AS `t1_c2` FROM `tbl_member` `t` RIGHT JOIN tbl_worship_attendance AS worshipAttendance ON worshipAttendance.member_id=t.id INNER JOIN tbl_worship AS w ON w.id=worshipAttendance.worship_id  LEFT OUTER JOIN `tbl_group_member` `groups_groups` ON (`t`.`id`=`groups_groups`.`member_id`) LEFT OUTER JOIN `tbl_group` `groups` ON (`groups`.`id`=`groups_groups`.`group_id`)  WHERE (t.state=1 AND worshipAttendance.worship_id=' . 1 . ' AND WEEKOFYEAR(worshipAttendance.attendance_date)='1' AND YEAR(worshipAttendance.attendance_date)='2014') GROUP BY t.id) sq
+2015/12/15 18:05:05 [trace] [system.db.ar.CActiveRecord] Member.findAll()
+2015/12/15 18:05:05 [trace] [system.db.CDbCommand] Querying SQL: SELECT `t`.`id` AS `t0_c0`, `t`.`state` AS `t0_c1`, `t`.`code` AS `t0_c2`, `t`.`name` AS `t0_c3`, `t`.`remarks` AS `t0_c4`, `t`.`english_name` AS `t0_c5`, `t`.`photo` AS `t0_c6`, `t`.`gender` AS `t0_c7`, `t`.`birthday` AS `t0_c8`, `t`.`email` AS `t0_c9`, `t`.`believe` AS `t0_c10`, `t`.`believe_date` AS `t0_c11`, `t`.`baptized` AS `t0_c12`, `t`.`baptized_date` AS `t0_c13`, `t`.`account_type` AS `t0_c14`, `t`.`new_card` AS `t0_c15`, `t`.`arrived_date` AS `t0_c16`, `t`.`create_date` AS `t0_c17`, `t`.`modify_date` AS `t0_c18`, `t`.`creator_id` AS `t0_c19`, `t`.`modifier_id` AS `t0_c20`, `t`.`address_district` AS `t0_c21`, `t`.`address_estate` AS `t0_c22`, `t`.`address_house` AS `t0_c23`, `t`.`address_flat` AS `t0_c24`, `t`.`contact_home` AS `t0_c25`, `t`.`contact_mobile` AS `t0_c26`, `t`.`contact_office` AS `t0_c27`, `t`.`contact_others` AS `t0_c28`, w.name AS worshipName, MAX(attendance_date) AS worshipAttendancesLastDate, SUM(attendance_date >= '2015-10-15') AS worshipAttendancesTwoMonthCount, SUM(attendance_date >= '2015-06-15') AS worshipAttendancesSixMonthCount, SUM(attendance_date >= '2014-12-15') AS worshipAttendancesYearCount, `groups`.`id` AS `t1_c0`, `groups`.`name` AS `t1_c1`, `groups`.`period_id` AS `t1_c2` FROM `tbl_member` `t` RIGHT JOIN tbl_worship_attendance AS worshipAttendance ON worshipAttendance.member_id=t.id INNER JOIN tbl_worship AS w ON w.id=worshipAttendance.worship_id  LEFT OUTER JOIN `tbl_group_member` `groups_groups` ON (`t`.`id`=`groups_groups`.`member_id`) LEFT OUTER JOIN `tbl_group` `groups` ON (`groups`.`id`=`groups_groups`.`group_id`)  WHERE (t.state=1 AND worshipAttendance.worship_id=' . 1 . ' AND WEEKOFYEAR(worshipAttendance.attendance_date)='1' AND YEAR(worshipAttendance.attendance_date)='2014') GROUP BY t.id ORDER BY worshipAttendancesLastDate LIMIT 30
+2015/12/15 18:05:05 [trace] [system.db.CDbCommand] Querying SQL: SELECT `t`.`member_id` AS `c`, MAX(attendance_date) AS `s` FROM `tbl_worship_attendance` `t` WHERE (0=1) GROUP BY `t`.`member_id`
+2015/12/15 18:05:05 [trace] [system.db.CDbCommand] Querying SQL: SELECT `t`.`member_id` AS `c`, SUM(DATE(attendance_date) >= DATE_SUB(NOW(), INTERVAL 2 MONTH)) AS `s` FROM `tbl_worship_attendance` `t` WHERE (0=1) GROUP BY `t`.`member_id`
+2015/12/15 18:05:05 [trace] [system.db.CDbCommand] Querying SQL: SELECT `t`.`member_id` AS `c`, SUM(DATE(attendance_date) >= DATE_SUB(NOW(), INTERVAL 6 MONTH)) AS `s` FROM `tbl_worship_attendance` `t` WHERE (0=1) GROUP BY `t`.`member_id`
+2015/12/15 18:05:05 [trace] [system.db.CDbCommand] Querying SQL: SELECT `t`.`member_id` AS `c`, SUM(DATE(attendance_date) >= DATE_SUB(NOW(), INTERVAL 12 MONTH)) AS `s` FROM `tbl_worship_attendance` `t` WHERE (0=1) GROUP BY `t`.`member_id`
+2015/12/15 18:05:05 [trace] [system.CModule] Loading "assetManager" application component
+2015/12/15 18:05:05 [trace] [system.CModule] Loading "clientScript" application component
+2015/12/15 18:05:05 [trace] [system.CModule] Loading "coreMessages" application component
+2015/12/15 18:05:05 [trace] [system.CModule] Loading "user" application component
+2015/12/15 18:05:05 [trace] [system.CModule] Loading "session" application component
+2015/12/15 18:05:05 [trace] [system.base.CModule] Loading "rights" module

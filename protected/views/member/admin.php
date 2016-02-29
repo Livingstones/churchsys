@@ -55,7 +55,7 @@ $('.search-form form').submit(function(){
 		),
 		array(
 			'name' => 'birthday',
-			'value' => 'date("d/m", strtotime($data->birthday))',
+			'value' => '($data->birthday === "0000-00-00" ? "--" : date("d/m", strtotime($data->birthday)))',
 			'filter' => "",
 		),
 		/*

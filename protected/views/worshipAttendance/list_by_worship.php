@@ -20,10 +20,11 @@ $this->breadcrumbs=array(
 	foreach ($worship_list as $worship)
 	{
 		array_push($columns, array(
-			'name' => 'w'.$worship->id,
+			'class' => 'CLinkColumn',
+//			'name' => 'w'.$worship->id,
 			'header' => $worship->name,
-			'value' => '$data->w'.$worship->id,
-			'filter' => '',
+			'labelExpression' => '$data->w'.$worship->id,
+			'urlExpression' => 'Yii::app()->createUrl("/worshipAttendance/listByWorshipWeek&weekno=" . DATE("W", strtotime($data["attendance_date"])) . "&worship_id=' . $worship->id . '&year=" . DATE("Y", strtotime($data["attendance_date"])))',
 		));
 	}
 	

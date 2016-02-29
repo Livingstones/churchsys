@@ -57,7 +57,7 @@ class Member extends CActiveRecord
 	const GENDER_MALE = 2;
 	const GENDER_FEMALE = 1;
 	
-	public $assignedGroups;
+	public $assignedGroups, $worshipName;
 	
 	/**
 	 * Returns the static model of the specified AR class.

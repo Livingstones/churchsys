@@ -121,9 +121,11 @@ class WorshipAttendanceTakeForm extends CFormModel
 		$message = $modelMember->name . " " . $brother_sister . " 歡迎您!";
 		
 		// Get Birthday Celebrate Message
+		if ($modelMember->birthday && $modelMember->birthday !== '0000-00-00') {
 		if (date("m-d", strtotime($modelMember->birthday)) >= date("m-d") && date("m-d", strtotime($modelMember->birthday)) <= date("m-d", time() + (7 * 24 * 3600)))
 		{
 			$message .= "<br/>" . date("d/m", strtotime($modelMember->birthday)) . " 是您的生日，祝您生日快樂！";	
+		}
 		}
 		
 		// Get Greeting Message

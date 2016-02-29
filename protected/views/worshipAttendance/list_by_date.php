@@ -33,7 +33,7 @@ $this->breadcrumbs=array(
 		array(
 			'name' => 'worship',
 			'header' => '崇拜',
-			'value' => '$data->worshipAttendances[0]->worship->name',
+			'value' => '$data->worshipName',
 			'filter' => '',
 		),
 		array(

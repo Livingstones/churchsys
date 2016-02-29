@@ -233,6 +233,16 @@ WHERE DAYOFWEEK(NOW())=weekly+1 AND state=1 AND start_time<=CURTIME() AND end_ti
 		));
 	}
 	
+	public function actionListByWorshipWeek()
+	{
+		$model=new WorshipAttendance('searchByWorshipWeek');
+		
+		$this->render('list_by_worship_week', array(
+			'model'=>$model,
+			'weekno'=>$_REQUEST['weekno'],
+		));
+	}
+
 	public function actionListByDate()
 	{
 		$model=new WorshipAttendance('searchByDate');

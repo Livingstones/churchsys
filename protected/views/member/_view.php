@@ -30,7 +30,7 @@
 		array(
 			'label' => '生日',
 			'type' => 'raw',
-			'value' => date("d/m/Y", strtotime($model->birthday)),
+			'value' => ($model->birthday !== '0000-00-00' ? date("d/m/Y", strtotime($model->birthday)) : '--'),
 		),
 	),
 )); ?>
