@@ -270,6 +270,52 @@ class WorshipReportController extends Controller
 		));
 		Yii::app()->end();
 	}
+
+	public function actionAjaxRaw()
+	{
+		$this->_downloadable("Raw_" . date("Ymd"));
+		$year = (isset($_REQUEST["year"]) ? $_REQUEST['year'] : (int) date("Y"));
+
+		$date = new DateTime;
+		$date->setISODate($year, 53);
+		$num_of_weeks = ($date->format("W") === "53" ? 53 : 52);
+
+		$data = [];
+		$weekno_list = [];
+		for($i=0; $i<$num_of_weeks; $i++) {
+			$week_start = new DateTime();
+			$week_start->setISODate($year,$i+1);
+			$weekno_list[] = $week_start->format('Y-m-d');
+			$data[$i+1] = [];
+		}
+		$query = "SELECT DISTINCT member.code, member.name " .
+			"FROM tbl_worship_attendance AS wa " .
+			"INNER JOIN tbl_member AS member ON member.id=wa.member_id " .
+			"WHERE YEAR(wa.attendance_date)=" . $year . " " .
+			"ORDER BY member.code";
+		$member_list=Yii::app()->db->createCommand($query)->queryAll();
+
+		$query = "SELECT DISTINCT member.code, member.name, WEEKOFYEAR(wa.attendance_date) as weekno, wa.attendance_date " .
+			"FROM tbl_worship_attendance AS wa " .
+			"INNER JOIN tbl_member AS member ON member.id=wa.member_id " .
+			"WHERE YEAR(wa.attendance_date)=" . $year . " " .
+			"ORDER BY member.code, weekno";
+		$data_list=Yii::app()->db->createCommand($query)->queryAll();
+		foreach ($data_list as $row) {
+			$weekno = $row['weekno'];
+			$member_code = $row['code'];
+			$data[$weekno][$member_code] = $row['attendance_date'];
+		}
+
+
+		$this->renderPartial('report_raw',array(
+			'year'=>$year,
+			'data'=>$data,
+			'weekno_list'=>$weekno_list,
+			'member_list'=>$member_list
+		));
+		Yii::app()->end();
+	}
 	
 	private function _downloadable( $name="" )
 	{

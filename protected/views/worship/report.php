@@ -135,6 +135,21 @@
 			年
 <?php $this->endWidget(); ?>
 		</li>
+		<li>
+			<?php $form=$this->beginWidget('CActiveForm', array(
+				'enableAjaxValidation'=>false,
+				'action' => Yii::app()->urlManager->createUrl('worshipReport/ajaxRaw'),
+				'htmlOptions' => array('target'=>'_blank'),
+			)); ?>
+			<?php echo CHtml::submitButton('原始數據'); ?>
+			<select id="annual_year" name="year">
+				<?php for ($i=date("Y"); $i>=2008; $i--): ?>
+					<option value="<?php echo $i; ?>"><?php echo $i; ?></option>
+				<?php endfor; ?>
+			</select>
+			年
+			<?php $this->endWidget(); ?>
+		</li>
 	</ul>
 </fieldset>
 <fieldset class="adminform">
