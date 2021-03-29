@@ -14,6 +14,9 @@
  * @property string $notation
  * @property string $midi
  * @property string $powerpoint
+ * @property string $notation-new
+ * @property string $midi-new
+ * @property string $powerpoint-new
  *
  * The followings are the available model relations:
  * @property HymnTags[] $hymnTags
@@ -91,9 +94,9 @@ class Hymn extends CActiveRecord
             array('powerpoint-new', 'file', 'types'=>'ppt', 'allowEmpty'=>true),
 			array('composer, lyricist, producer, notation, midi, powerpoint', 'length', 'max'=>255),
 			array('lyric', 'safe'),
-			array('notation', 'unsafe'),
-			array('midi', 'unsafe'),
-			array('powerpoint', 'unsafe'),
+			array('notation-new', 'unsafe'),
+			array('midi-new', 'unsafe'),
+			array('powerpoint-new', 'unsafe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, name, category, language, lyric, composer, lyricist, producer, notation, midi, powerpoint', 'safe', 'on'=>'search'),
