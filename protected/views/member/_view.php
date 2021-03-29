@@ -1,5 +1,9 @@
-<?php $path = Yii::app()->params['upload_dir'] . '/file/member/'; ?>
-<img src="<?php echo (file_exists($path . $model->code . ".jpg") ? $path . $model->code . ".jpg" : "images/anonymous.gif"); ?>" width="200"/>
+<?php
+$path = Yii::app()->params['upload_dir'] . '/file/member/' . $model->code . ".jpg";
+$type = pathinfo($path, PATHINFO_EXTENSION);
+$image = file_exists($path) ? 'data:image/' . $type . ';base64,' . base64_encode(file_get_contents($path)) : "images/anonymous.gif";
+?>
+<img src="<?php echo $image; ?>" width="200"/>
 <h1><?php echo $model->name; ?> (<?php echo $model->code; ?>)</h1>
 <fieldset>
 	<legend>個人資料</legend>
