@@ -168,7 +168,7 @@ class Hymn extends CActiveRecord
         $path = Yii::app()->params['upload_dir'] . "/file/";
         if (is_object($notation))
 		{
-			$notation->saveAs($path . 'hymn/notation/' . $this->id . "-notation" . $notation->getExtensionName());
+			$notation->saveAs($path . 'hymn/notation/' . $this->id . "-notation." . $notation->getExtensionName());
 			$this->notation = $this->id . "-notation." . $notation->getExtensionName();
 			$ch = true;
 		}
