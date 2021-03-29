@@ -9,8 +9,8 @@
 	<p class="note"><span class="required">*</span>必須填寫.</p>
 	
 	<?php echo $form->errorSummary($model); ?>
-	
-	<img src="<?php echo (file_exists("images/member/" . $model->code . ".jpg") ? "images/member/" . $model->code . ".jpg" : "images/anonymous.gif"); ?>" width="200"/>
+	<?php $path = Yii::app()->params['upload_dir'] . '/file/member/'; ?>
+	<img src="<?php echo (file_exists($path . $model->code . ".jpg") ? $path . $model->code . ".jpg" : "images/anonymous.gif"); ?>" width="200"/>
 <?php echo $form->fileField($model, 'photo'); ?>
 	
 <?php if (isset($_REQUEST["toMember"])) : ?>

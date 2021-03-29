@@ -1,5 +1,5 @@
-
-<img src="<?php echo (file_exists("images/member/" . $model->code . ".jpg") ? "images/member/" . $model->code . ".jpg" : "images/anonymous.gif"); ?>" width="200"/>
+<?php $path = Yii::app()->params['upload_dir'] . '/file/member/'; ?>
+<img src="<?php echo (file_exists($path . $model->code . ".jpg") ? $path . $model->code . ".jpg" : "images/anonymous.gif"); ?>" width="200"/>
 <h1><?php echo $model->name; ?> (<?php echo $model->code; ?>)</h1>
 <fieldset>
 	<legend>個人資料</legend>
