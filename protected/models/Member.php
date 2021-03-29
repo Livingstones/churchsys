@@ -302,8 +302,11 @@ class Member extends CActiveRecord
     protected function afterSave()
     {
         if ($this->photo) {
-            $path = Yii::app()->params['upload_dir'] . "/file/";
-            $this->photo->saveAs($path . 'member/' . $this->code . '.jpg');
+            $path = Yii::app()->params['upload_dir'] . '/file/member/' . $this->code . '.jpg';
+            if (file_exists($path)) {
+                unlink($path);
+            }
+            $this->photo->saveAs($path);
         }
         parent::afterSave();
     }
