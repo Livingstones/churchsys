@@ -56,6 +56,7 @@
 		<?php echo $form->labelEx($model,'notation'); ?>
 		<?php echo $form->fileField($model, 'notation'); ?>
 <?php if (!empty($model->notation)) : ?>
+<?php print_r($model->notation); ?>
 		<a href="<?php echo $this->createUrl("file/download", array("p"=>"hymn/notation/" . $model->notation)); ?>" target="_blank">下載</a>
 <?php endif; ?>
 		<?php echo $form->error($model,'notation'); ?>
