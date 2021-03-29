@@ -55,7 +55,7 @@
 	<div class="row">
 		<?php echo $form->labelEx($model,'notation'); ?>
         <?php echo $form->hiddenField($model, 'notation'); ?>
-		<?php echo $form->fileField($model, 'notation-new'); ?>
+		<?php echo $form->fileField($model, 'notation_new'); ?>
 <?php if (!empty($model->notation)) : ?>
 		<a href="<?php echo $this->createUrl("file/download", array("p"=>"hymn/notation/" . $model->notation)); ?>" target="_blank">下載</a>
 <?php endif; ?>
@@ -65,7 +65,7 @@
 	<div class="row">
 		<?php echo $form->labelEx($model,'midi'); ?>
         <?php echo $form->hiddenField($model, 'midi'); ?>
-		<?php echo $form->fileField($model, 'midi-new'); ?>
+		<?php echo $form->fileField($model, 'midi_new'); ?>
 <?php if (!empty($model->midi)) : ?>
 		<a href="<?php echo $this->createUrl("file/download", array("p"=>"hymn/midi/" . $model->midi)); ?>" target="_blank">下載</a>
 <?php endif; ?>
@@ -75,7 +75,7 @@
 	<div class="row">
 		<?php echo $form->labelEx($model,'powerpoint'); ?>
         <?php echo $form->hiddenField($model, 'powerpoint'); ?>
-		<?php echo $form->fileField($model, 'powerpoint-new'); ?>
+		<?php echo $form->fileField($model, 'powerpoint_new'); ?>
 <?php if (!empty($model->powerpoint)) : ?>
 		<a href="<?php echo $this->createUrl("file/download", array("p"=>"hymn/powerpoint/" . $model->powerpoint)); ?>" target="_blank">下載</a>
 <?php endif; ?>

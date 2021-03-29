@@ -14,9 +14,9 @@
  * @property string $notation
  * @property string $midi
  * @property string $powerpoint
- * @property string $notation-new
- * @property string $midi-new
- * @property string $powerpoint-new
+ * @property string $notation_new
+ * @property string $midi_new
+ * @property string $powerpoint_new
  *
  * The followings are the available model relations:
  * @property HymnTags[] $hymnTags
@@ -89,14 +89,14 @@ class Hymn extends CActiveRecord
 		return array(
 			array('name, category, language', 'required'),
 			array('category, language', 'numerical', 'integerOnly'=>true),
-            array('notation-new', 'file', 'types'=>'pdf,doc,zip', 'allowEmpty'=>true),
-            array('midi-new', 'file', 'types'=>'mid,midi', 'allowEmpty'=>true),
-            array('powerpoint-new', 'file', 'types'=>'ppt', 'allowEmpty'=>true),
+            array('notation_new', 'file', 'types'=>'pdf,doc,zip', 'allowEmpty'=>true),
+            array('midi_new', 'file', 'types'=>'mid,midi', 'allowEmpty'=>true),
+            array('powerpoint_new', 'file', 'types'=>'ppt', 'allowEmpty'=>true),
 			array('composer, lyricist, producer, notation, midi, powerpoint', 'length', 'max'=>255),
 			array('lyric', 'safe'),
-			array('notation-new', 'unsafe'),
-			array('midi-new', 'unsafe'),
-			array('powerpoint-new', 'unsafe'),
+			array('notation_new', 'unsafe'),
+			array('midi_new', 'unsafe'),
+			array('powerpoint_new', 'unsafe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, name, category, language, lyric, composer, lyricist, producer, notation, midi, powerpoint', 'safe', 'on'=>'search'),
@@ -165,9 +165,9 @@ class Hymn extends CActiveRecord
 	
 	protected function beforeSave()
 	{
-		$notation = CUploadedFile::getInstance($this,'notation-new');
-		$midi = CUploadedFile::getInstance($this,'midi-new');
-		$powerpoint = CUploadedFile::getInstance($this,'powerpoint-new');
+		$notation = CUploadedFile::getInstance($this,'notation_new');
+		$midi = CUploadedFile::getInstance($this,'midi_new');
+		$powerpoint = CUploadedFile::getInstance($this,'powerpoint_new');
         $path = Yii::app()->params['upload_dir'] . "/file/";
         if (is_object($notation))
 		{
