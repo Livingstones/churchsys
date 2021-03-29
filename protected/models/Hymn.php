@@ -86,9 +86,9 @@ class Hymn extends CActiveRecord
 		return array(
 			array('name, category, language', 'required'),
 			array('category, language', 'numerical', 'integerOnly'=>true),
-            array('notation', 'file', 'types'=>'pdf,doc,zip', 'allowEmpty'=>true),
-            array('midi', 'file', 'types'=>'mid,midi', 'allowEmpty'=>true),
-            array('powerpoint', 'file', 'types'=>'ppt', 'allowEmpty'=>true),
+            array('notation-new', 'file', 'types'=>'pdf,doc,zip', 'allowEmpty'=>true),
+            array('midi-new', 'file', 'types'=>'mid,midi', 'allowEmpty'=>true),
+            array('powerpoint-new', 'file', 'types'=>'ppt', 'allowEmpty'=>true),
 			array('composer, lyricist, producer, notation, midi, powerpoint', 'length', 'max'=>255),
 			array('lyric', 'safe'),
 			array('notation', 'unsafe'),
@@ -162,9 +162,9 @@ class Hymn extends CActiveRecord
 	
 	protected function beforeSave()
 	{
-		$notation = CUploadedFile::getInstance($this,'notation');
-		$midi = CUploadedFile::getInstance($this,'midi');
-		$powerpoint = CUploadedFile::getInstance($this,'powerpoint');
+		$notation = CUploadedFile::getInstance($this,'notation-new');
+		$midi = CUploadedFile::getInstance($this,'midi-new');
+		$powerpoint = CUploadedFile::getInstance($this,'powerpoint-new');
         $path = Yii::app()->params['upload_dir'] . "/file/";
         if (is_object($notation))
 		{
