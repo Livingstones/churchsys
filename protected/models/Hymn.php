@@ -174,13 +174,13 @@ class Hymn extends CActiveRecord
 		}
 		if (is_object($midi))
 		{
-			$midi->saveAs($path . 'hymn/midi/' . $this->id . "-midi" . $midi->getExtensionName());
+			$midi->saveAs($path . 'hymn/midi/' . $this->id . "-midi." . $midi->getExtensionName());
 			$this->midi = $this->id . "-midi." . $midi->getExtensionName();
 			$ch = true;
 		}
 		if (is_object($powerpoint))
 		{
-			$powerpoint->saveAs($path . 'hymn/powerpoint/' . $this->id . "-powerpoint" . $powerpoint->getExtensionName());
+			$powerpoint->saveAs($path . 'hymn/powerpoint/' . $this->id . "-powerpoint." . $powerpoint->getExtensionName());
 			$this->powerpoint = $this->id . "-powerpoint." . $powerpoint->getExtensionName();
 			$ch = true;
 		}
