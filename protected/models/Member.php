@@ -11,6 +11,7 @@
  * @property string $remarks
  * @property string $english_name
  * @property string $photo
+ * @property string $photo_upload
  * @property integer $gender
  * @property string $birthday
  * @property string $email
@@ -57,7 +58,7 @@ class Member extends CActiveRecord
     const GENDER_MALE = 2;
     const GENDER_FEMALE = 1;
 
-    public $assignedGroups, $worshipName;
+    public $assignedGroups, $worshipName, $photo_upload;
 
     /**
      * Returns the static model of the specified AR class.
@@ -300,8 +301,10 @@ class Member extends CActiveRecord
 
     protected function afterSave()
     {
-        if ($this->photo)
-            $this->photo->saveAs('images/member/' . $this->code . '.jpg');
+        if ($this->photo) {
+            $path = Yii::app()->params['upload_dir'] . "/file/";
+            $this->photo->saveAs($path . 'member/' . $this->code . '.jpg');
+        }
         parent::afterSave();
     }
 }
