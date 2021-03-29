@@ -28,6 +28,10 @@ class Hymn extends CActiveRecord
 	const LANGUAGE_CANTONESE = 0;
 	const LANGUAGE_MANDARIN = 1;
 
+    public $notation_new;
+    public $midi_new;
+    public $powerpoint_new;
+
 	public function showTags($withLinks = false)
 	{
 		$tags = array();
