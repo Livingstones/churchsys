@@ -23,24 +23,16 @@
 </style>
 <table border=0 cellpadding=0 cellspacing=0 id='tblMain'>
     <tr class="subtitle">
-        <td>&nbsp;</td>
-        <?php foreach ($member_list as $member) : ?>
-            <td><?php echo $member['code']; ?></td>
+        <?php foreach ($title as $t) : ?>
+            <td><?php echo $t; ?></td>
         <?php endforeach; ?>
     </tr>
-    <tr class="tbltitle">
-        <td><?php echo $year; ?></td>
-        <?php foreach ($member_list as $member) : ?>
-            <td><?php echo $member['name']; ?></td>
-        <?php endforeach; ?>
-    </tr>
-    <?php foreach ($weekno_list as $weekno) : ?>
+    <?php foreach ($data as $row) : ?>
         <tr class="tblcontent">
-            <td>
-                <?php echo $weekno; ?></td>
-            <?php foreach ($member_list as $member) : ?>
-                <td><?php echo $data[$weekno][$member['code']]; ?></td>
-            <?php endforeach; ?>
+            <td><?php echo $row['code']; ?></td>
+            <td><?php echo $row['name']; ?></td>
+            <td><?php echo $row['weekno']; ?></td>
+            <td><?php echo $row['attendance_date']; ?></td>
         </tr>
     <?php endforeach; ?>
 </table>
